@@ -1,0 +1,30 @@
+:root {
+  --black: #3b434e;
+  --white: white;
+  --primaty: #7653fc;
+  --red: #fc836d;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
+  --font-family: "Noto Sans KR", sans-serif;
+  --bacground-color-white: #f5f6f8;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-family);
+  color: var(--black);
+
+  background: var(--bacground-color-white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
