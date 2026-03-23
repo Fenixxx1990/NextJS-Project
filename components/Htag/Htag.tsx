@@ -2,7 +2,11 @@ import { type JSX } from "react";
 import styles from "./Htag.module.css";
 import { type IHtagProps } from "./Htag.props";
 
-export const Htag = ({ tag, children, ...props }: IHtagProps): JSX.Element => {
+export const Htag = ({
+  tag = "h2",
+  children,
+  ...props
+}: IHtagProps): JSX.Element => {
   switch (tag) {
     case "h1":
       return (

@@ -1,0 +1,21 @@
+.p {
+  margin: 0;
+}
+
+.psmall {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 171%;
+}
+
+.pmedium {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.plarge {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 161%;
+}
