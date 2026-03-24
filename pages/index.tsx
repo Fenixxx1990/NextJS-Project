@@ -1,7 +1,8 @@
 import { Button, Htag, P, Rating, Tag } from "@/components";
+import { withLayout } from "@/layout/Layout";
 import { useEffect, useState, type JSX } from "react";
 
-export default function Home(): JSX.Element {
+export function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
   useEffect(() => {
@@ -44,3 +45,5 @@ export default function Home(): JSX.Element {
     </>
   );
 }
+
+export default withLayout(Home);
