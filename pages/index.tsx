@@ -5,7 +5,7 @@ import { useEffect, useState, type JSX } from "react";
 import axios from "axios";
 import type { MenuItem } from "@/interfaces/menu.interface";
 
-export function Home({ menu }: IHomeProps): JSX.Element {
+export function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
   useEffect(() => {
@@ -45,11 +45,6 @@ export function Home({ menu }: IHomeProps): JSX.Element {
       </Tag>
 
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-        {menu.map((item) => (
-          <li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-        ))}
-      </ul>
     </>
   );
 }
