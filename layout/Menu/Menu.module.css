@@ -1,23 +1,62 @@
-.footer {
+.firstlevel {
   display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 10px 40px;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+  align-items: center;
 
-  padding: 25px 30px;
+  margin-top: 20px;
 
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--white);
-
-  background: var(--primaty);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
 }
 
-.footer a:hover {
-  color: var(--gray-light);
+.firstlevelactive,
+.firstlevel:hover {
+  color: var(--primaty);
 }
 
-@media (width <= 765px) {
-  .footer {
-    grid-template-columns: 1fr;
-  }
+.firstlevelactive svg,
+.firstlevel:hover svg {
+  fill: var(--primaty);
+}
+
+.secondlevel {
+  cursor: pointer;
+
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  color: var(--gray-dark);
+  text-transform: uppercase;
+}
+
+.secondblock {
+  margin-left: 12px;
+  padding-left: 32px;
+  border-left: 1px solid #dfdfdf;
+}
+
+.scondlevelblockopen:last-child {
+  margin-bottom: 20px;
+}
+
+.thirdlevel {
+  cursor: pointer;
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--gray-dark);
+}
+
+.thirdlevelactive,
+.thirdlevel:hover {
+  color: var(--primaty);
 }
