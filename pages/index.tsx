@@ -9,10 +9,7 @@ export function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
   useEffect(() => {
-    console.log("counter", counter);
-    return function cleanup() {
-      console.log("cleanup");
-    };
+    return function cleanup() {};
   }, [counter]);
 
   const [rating, setRating] = useState<number>(4);
@@ -55,7 +52,9 @@ export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   const firstCategory = 0;
   const { data: menu } = await axios.post<MenuItem[]>(
     `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`,
-    { firstCategory },
+    {
+      firstCategory,
+    },
   );
   return {
     props: {

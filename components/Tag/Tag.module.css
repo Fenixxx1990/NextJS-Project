@@ -27,7 +27,7 @@
   background: #de0000;
 }
 
-.gray {
+.grey {
   font-weight: bold;
   color: var(--white);
   background: #b3c0d9;
@@ -40,7 +40,7 @@
 }
 
 .primary {
-  border: 1px solid var(--primaty);
-  color: var(--primaty);
+  border: 1px solid var(--primary);
+  color: var(--primary);
   background: none;
 }

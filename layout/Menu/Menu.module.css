@@ -13,12 +13,12 @@
 
 .firstlevelactive,
 .firstlevel:hover {
-  color: var(--primaty);
+  color: var(--primary);
 }
 
 .firstlevelactive svg,
 .firstlevel:hover svg {
-  fill: var(--primaty);
+  fill: var(--primary);
 }
 
 .secondlevel {
@@ -34,9 +34,18 @@
 }
 
 .secondblock {
+  margin-top: 15px;
   margin-left: 12px;
   padding-left: 32px;
   border-left: 1px solid #dfdfdf;
+}
+
+.scondlevelblock {
+  display: none;
+}
+
+.scondlevelblockopen {
+  display: block;
 }
 
 .scondlevelblockopen:last-child {
@@ -58,5 +67,5 @@
 
 .thirdlevelactive,
 .thirdlevel:hover {
-  color: var(--primaty);
+  color: var(--primary);
 }

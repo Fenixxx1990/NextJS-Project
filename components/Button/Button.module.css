@@ -16,11 +16,11 @@
 
 .primary {
   color: var(--white);
-  background: var(--primaty);
+  background: var(--primary);
 }
 
 .primary:hover {
-  background: var(--primaty-hover);
+  background: var(--primary-hover);
 }
 
 .ghost {
@@ -31,7 +31,7 @@
 
 .ghost:hover {
   color: var(--white);
-  background-color: var(--primaty);
+  background-color: var(--primary);
 }
 
 .arrow {
