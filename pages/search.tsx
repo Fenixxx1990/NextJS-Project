@@ -3,11 +3,11 @@ import { withLayout } from "@/layout/Layout";
 import axios from "axios";
 import type { GetStaticProps } from "next";
 
-export function Search(): React.JSX.Element {
+export function SearchPage(): React.JSX.Element {
   return <div>Search</div>;
 }
 
-export default withLayout(Search);
+export default withLayout(SearchPage);
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   const firstCategory = 0;

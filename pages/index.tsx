@@ -1,4 +1,4 @@
-import { Button, Htag, P, Rating, Tag } from "@/components";
+import { Button, Htag, Input, P, Rating, Tag, Textarea } from "@/components";
 import { withLayout } from "@/layout/Layout";
 import type { GetStaticProps } from "next";
 import { useEffect, useState, type JSX } from "react";
@@ -40,8 +40,9 @@ export function Home(): JSX.Element {
       <Tag size="s" color="primary">
         Primary
       </Tag>
-
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Input placeholder="text" />
+      <Textarea placeholder="textarea" />
     </>
   );
 }
