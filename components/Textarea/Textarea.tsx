@@ -1,11 +1,24 @@
 import { type JSX } from "react";
 import styles from "./Textarea.module.css";
-import { type TextareaProps } from "./Textarea.props";
+import { type ITextareaProps } from "./Textarea.props";
 import cn from "classnames";
 
 export const Textarea = ({
+  error,
+  ref,
   className,
   ...props
-}: TextareaProps): JSX.Element => {
-  return <textarea className={cn(className, styles.textarea)} {...props} />;
+}: ITextareaProps): JSX.Element => {
+  return (
+    <div className={cn(styles.textareawrapper, className)}>
+      <textarea
+        className={cn(styles.textarea, {
+          [styles.error]: error,
+        })}
+        ref={ref}
+        {...props}
+      />
+      {error && <span className={styles.errormessage}>{error.message}</span>}
+    </div>
+  );
 };

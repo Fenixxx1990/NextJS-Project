@@ -5,6 +5,8 @@ import cn from "classnames";
 import StarIcon from "./star.svg";
 
 export const Rating = ({
+  error,
+  ref,
   isEditable = false,
   rating,
   setRating,
@@ -65,5 +67,14 @@ export const Rating = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rating]);
 
-  return <div {...props}>{ratingArray.map((r) => r)}</div>;
+  return (
+    <div
+      ref={ref}
+      {...props}
+      className={cn(styles.ratingwrapper, { [styles.error]: error })}
+    >
+      {ratingArray.map((r) => r)}
+      {error && <span className={styles.errormessage}>{error.message}</span>}
+    </div>
+  );
 };

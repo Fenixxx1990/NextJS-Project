@@ -3,6 +3,7 @@
   grid-template-columns:
     [start] 70px [logoend] 30px [titlestart] calc(50% - 100px)
     [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+  margin-top: 30px;
   padding: 30px;
 }
 
@@ -137,6 +138,21 @@
 .characteristicsdots {
   margin-bottom: 5px;
   border-bottom: 1px dashed var(--gray-light);
+}
+
+.closed {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+}
+
+.opened {
+  max-height: min-content;
+  padding: 30px;
+}
+
+.ratetitle a {
+  color: var(--primary);
 }
 
 @media screen and (width <= 1320px) {

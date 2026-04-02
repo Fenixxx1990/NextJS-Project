@@ -4,6 +4,7 @@ import { type ICardProps } from "./Card.props";
 import cn from "classnames";
 
 export const Card = ({
+  ref,
   color = "white",
   children,
   className,
@@ -14,6 +15,7 @@ export const Card = ({
       className={cn(styles.card, className, {
         [styles.blue]: color === "blue",
       })}
+      ref={ref}
       {...props}
     >
       {children}
