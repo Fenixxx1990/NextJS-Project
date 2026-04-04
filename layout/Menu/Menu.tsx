@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { firstLevelMenu } from "@/helpers/helpers";
 import { motion } from "framer-motion";
+const MotionDiv = motion.create("div");
 
 export const Menu = (): JSX.Element => {
   const { menu, firstCategory, setMenu } = useContext(AppContext);
@@ -89,7 +90,7 @@ export const Menu = (): JSX.Element => {
               >
                 {m._id.secondCategory}
               </div>
-              <motion.div
+              <MotionDiv
                 layout
                 variants={variants}
                 initial={m.isOpened ? "visible" : "hidden"}
@@ -97,7 +98,7 @@ export const Menu = (): JSX.Element => {
                 className={cn(styles.scondlevelblock)}
               >
                 {buildThirdLevel(m.pages, menuItem.route)}
-              </motion.div>
+              </MotionDiv>
             </div>
           );
         })}
@@ -109,7 +110,7 @@ export const Menu = (): JSX.Element => {
     return (
       <>
         {pages.map((page) => (
-          <motion.div key={page._id} variants={variantsChildren}>
+          <MotionDiv key={page._id} variants={variantsChildren}>
             <Link
               href={`/${route}/${page.alias}`}
               className={cn(styles.thirdlevel, {
@@ -119,7 +120,7 @@ export const Menu = (): JSX.Element => {
             >
               {page.category}
             </Link>
-          </motion.div>
+          </MotionDiv>
         ))}
       </>
     );

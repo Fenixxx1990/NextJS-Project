@@ -3,6 +3,9 @@ import styles from "./Button.module.css";
 import { type IButtonProps } from "./Button.props";
 import ArrowIcon from "./arrow.svg";
 import cn from "classnames";
+import { motion } from "framer-motion";
+
+const MotionButton = motion.create("button");
 
 export const Button = ({
   appearence = "primary",
@@ -13,7 +16,8 @@ export const Button = ({
 }: IButtonProps): JSX.Element => {
   return (
     <>
-      <button
+      <MotionButton
+        whileHover={{ scale: 1.05 }}
         {...props}
         className={cn(styles.button, className, {
           [styles.primary]: appearence == "primary",
@@ -28,7 +32,7 @@ export const Button = ({
             <ArrowIcon />
           </span>
         )}
-      </button>
+      </MotionButton>
     </>
   );
 };

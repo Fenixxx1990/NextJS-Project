@@ -13,7 +13,9 @@ import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { motion } from "framer-motion";
 
-export const Product = motion(
+const MotionDiv = motion.create("div");
+
+export const Product = motion.create(
   ({ ref, product, className, ...props }: IProductProps): JSX.Element => {
     const [isReviewOpen, setIsReviewOpen] = useState<boolean>(false);
     const reviewRef = useRef<HTMLDivElement>(null);
@@ -110,13 +112,12 @@ export const Product = motion(
             </Button>
           </div>
         </Card>
-        <motion.div
+        <MotionDiv
           animate={isReviewOpen ? "visible" : "hidden"}
           variants={variants}
           initial="hidden"
-          className={cn(styles.reviews)}
         >
-          <Card ref={reviewRef} color="blue">
+          <Card ref={reviewRef} color="blue" className={cn(styles.reviews)}>
             {product.reviews.map((r) => (
               <div key={r._id}>
                 <Review review={r} />
@@ -125,7 +126,7 @@ export const Product = motion(
             ))}
             <ReviewForm productId={product._id} />
           </Card>
-        </motion.div>
+        </MotionDiv>
       </div>
     );
   },
