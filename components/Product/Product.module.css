@@ -140,8 +140,11 @@
   border-bottom: 1px dashed var(--gray-light);
 }
 
-.reviews {
+.reviewsblock {
   overflow: hidden;
+}
+
+.reviews {
   padding: 30px;
 }
 

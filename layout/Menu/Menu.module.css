@@ -28,7 +28,6 @@
 
   font-size: 12px;
   font-weight: 300;
-  line-height: 16px;
   color: var(--gray-dark);
   text-transform: uppercase;
 }
@@ -53,8 +52,9 @@
 
   font-size: 14px;
   font-weight: 500;
-  line-height: 19px;
   color: var(--gray-dark);
+
+  outline-offset: -1px;
 }
 
 .thirdlevelactive,

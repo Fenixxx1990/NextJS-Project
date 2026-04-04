@@ -1,4 +1,5 @@
-import { useContext, type JSX } from "react";
+import type { KeyboardEvent, JSX } from "react";
+import { useContext } from "react";
 import { AppContext } from "@/context/app.context";
 import type {
   IFirstLevelMenuItem,
@@ -51,6 +52,16 @@ export const Menu = (): JSX.Element => {
     }
   };
 
+  const openSecondLevelKey = (
+    key: KeyboardEvent,
+    secondCatrogry: string,
+  ): void => {
+    if (key.code === "Space" || key.code === "Enter") {
+      key.preventDefault();
+      openSecondLevel(secondCatrogry);
+    }
+  };
+
   const buildFirstLevel = (): JSX.Element => {
     return (
       <>
@@ -85,6 +96,10 @@ export const Menu = (): JSX.Element => {
           return (
             <div key={m._id.secondCategory}>
               <div
+                tabIndex={0}
+                onKeyDown={(key: KeyboardEvent) =>
+                  openSecondLevelKey(key, m._id.secondCategory)
+                }
                 className={styles.secondlevel}
                 onClick={() => openSecondLevel(m._id.secondCategory)}
               >
@@ -97,7 +112,7 @@ export const Menu = (): JSX.Element => {
                 animate={m.isOpened ? "visible" : "hidden"}
                 className={cn(styles.scondlevelblock)}
               >
-                {buildThirdLevel(m.pages, menuItem.route)}
+                {buildThirdLevel(m.pages, menuItem.route, m.isOpened ?? false)}
               </MotionDiv>
             </div>
           );
@@ -106,12 +121,17 @@ export const Menu = (): JSX.Element => {
     );
   };
 
-  const buildThirdLevel = (pages: PageItem[], route: string): JSX.Element => {
+  const buildThirdLevel = (
+    pages: PageItem[],
+    route: string,
+    isOpened: boolean,
+  ): JSX.Element => {
     return (
       <>
         {pages.map((page) => (
           <MotionDiv key={page._id} variants={variantsChildren}>
             <Link
+              tabIndex={isOpened ? 0 : -1}
               href={`/${route}/${page.alias}`}
               className={cn(styles.thirdlevel, {
                 [styles.thirdlevelactive]:

@@ -116,6 +116,7 @@ export const Product = motion.create(
           animate={isReviewOpen ? "visible" : "hidden"}
           variants={variants}
           initial="hidden"
+          className={styles.reviewsblock}
         >
           <Card ref={reviewRef} color="blue" className={cn(styles.reviews)}>
             {product.reviews.map((r) => (
