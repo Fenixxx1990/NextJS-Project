@@ -1,0 +1,6 @@
+services:
+  app:
+    image: top-app-page-app
+    container_name: top-app-page-app
+    restart: always
+    ports: -3001:3001
