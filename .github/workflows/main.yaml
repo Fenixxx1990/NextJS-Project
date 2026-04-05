@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -users: action/checkout@master
+      -uses: action/checkout@master
       -name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
