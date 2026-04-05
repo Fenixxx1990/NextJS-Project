@@ -5,4 +5,5 @@ export interface IReviewFormProps extends DetailedHTMLProps<
   HTMLDivElement
 > {
   productId: string;
+  isOpened: boolean;
 }

@@ -47,13 +47,16 @@
 }
 
 .close {
-  cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
+
+  border: none;
+
+  background: none;
 }
 
-.error .close path {
+.error .close svg path {
   stroke: var(--red);
 }
 

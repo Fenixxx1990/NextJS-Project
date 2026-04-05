@@ -4,7 +4,7 @@ import { type HeaderProps } from "./Header.props";
 import cn from "classnames";
 import Logo from "../logo.svg";
 import { ButtonIcon } from "@/components";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useRouter } from "next/router";
 
@@ -13,6 +13,7 @@ const MotionDiv = motion.create("div");
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     startTransition(() => {
@@ -29,7 +30,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
       },
     },
     closed: {
-      opacity: 0,
+      opacity: shouldReduceMotion ? 1 : 0,
       x: "100%",
     },
   };

@@ -16,7 +16,11 @@ export const Input = ({
         className={cn(styles.input, { [styles.error]: error })}
         {...props}
       />
-      {error && <span className={styles.errormessage}>{error.message}</span>}
+      {error && (
+        <span className={styles.errormessage} role="alert">
+          {error.message}
+        </span>
+      )}
     </div>
   );
 };
