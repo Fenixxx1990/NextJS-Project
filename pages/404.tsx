@@ -5,7 +5,7 @@ import type { JSX } from "react";
 export function Error404(): JSX.Element {
   return (
     <>
-      <Htag tag="h1">Ошибка 404</Htag>
+      <Htag tag="h1">Ошибка 404!</Htag>
     </>
   );
 }
